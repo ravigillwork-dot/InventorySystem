@@ -1,3 +1,6 @@
+package Service;
+
+import Model.Product;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

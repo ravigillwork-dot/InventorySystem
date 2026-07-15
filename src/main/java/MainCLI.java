@@ -1,8 +1,17 @@
 
+import Model.Product;
+import Repository.FileRepository;
+import Repository.InMemoryRepository;
+import Repository.ProductRepository;
+import Repository.SQLiteRepository;
+import Service.InputHelper;
+import Service.SQLiteconnector;
+import Service.SQLiteinit;
+
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class Main {
+public class MainCLI {
     Scanner scanner = new Scanner(System.in);
     InputHelper helper = new InputHelper(scanner);
 
@@ -25,24 +34,20 @@ public class Main {
                 case 2 -> {
                     Product p = helper.createProduct();
                     repo.save(p);
-                    System.out.println("Product has been added to the inventory");
                 }
                 case 3 -> {
                     long productId = helper.collectId();
                     int num = helper.collectint();
                     repo.addQuantity(productId, num);
-                    System.out.println("The product quantity has been updated");
                 }
                 case 4 -> {
                     long productId = helper.collectId();
                     int num = helper.collectint();
                     repo.removeQuantity(productId, num);
-                    System.out.println("The product quantity has been updated");
                 }
                 case 5 -> {
                     long productId = helper.collectId();
                     repo.deleteById(productId);
-                    System.out.println("The product has been removed from inventory");
                 }
                 case 6 -> {
                     scanner.close();

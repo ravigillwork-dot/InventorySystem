@@ -1,3 +1,5 @@
+package Model;
+
 public class Product {
     private long productId;
     private String name;
@@ -72,3 +74,4 @@ public class Product {
                 + ", Quantity=" + quantity;
     }
 }
+
