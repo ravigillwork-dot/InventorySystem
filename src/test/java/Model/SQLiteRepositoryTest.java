@@ -1,3 +1,8 @@
+package Model;
+
+import Repository.SQLiteRepository;
+import Service.RepositoryException;
+import Service.SQLiteinit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

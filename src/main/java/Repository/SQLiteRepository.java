@@ -1,3 +1,8 @@
+package Repository;
+
+import Model.Product;
+import Service.RepositoryException;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

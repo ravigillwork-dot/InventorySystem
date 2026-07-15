@@ -1,3 +1,6 @@
+package Model;
+
+import Repository.InMemoryRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

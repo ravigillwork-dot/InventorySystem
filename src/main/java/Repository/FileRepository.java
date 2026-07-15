@@ -1,3 +1,6 @@
+package Repository;
+
+import Model.Product;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.nio.file.Files;
@@ -11,7 +14,7 @@ import java.util.Map;
 public class FileRepository implements  ProductRepository{
     private final Path path;
     private final ObjectMapper mapper = new ObjectMapper();
-    private Map<Long,Product> inventory;
+    private Map<Long, Product> inventory;
 
     public FileRepository(String filepath){
         this.path = Path.of(filepath);
@@ -32,7 +35,7 @@ public class FileRepository implements  ProductRepository{
         }
     }
 
-    private void writeAll(Map<Long,Product> inventory){
+    private void writeAll(Map<Long, Product> inventory){
         try{
             mapper.writeValue(path.toFile(),inventory);
         }
@@ -43,10 +46,10 @@ public class FileRepository implements  ProductRepository{
 
     private Map<Long, Product> readAll(){
         try {
-            return mapper.readValue(path.toFile(), new TypeReference<Map<Long,Product>>(){});
+            return mapper.readValue(path.toFile(), new TypeReference<Map<Long, Product>>(){});
         } catch (IOException e) {
             System.out.println("Failed to read file "+ e.getMessage());
-            return new HashMap<Long,Product>();
+            return new HashMap<Long, Product>();
         }
     }
 
