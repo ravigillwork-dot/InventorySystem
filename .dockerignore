@@ -1,0 +1,10 @@
+.github
+
+.gitignore
+
+data/inventory.db
+
+inventory.json
+
+target
+
