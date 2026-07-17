@@ -12,7 +12,7 @@ import java.sql.SQLException;
 public class MainApi {
     public void main() throws SQLException, IOException {
         int port;
-        SQLiteconnector connector = new SQLiteconnector("jdbc:sqlite:inventory.db");
+        SQLiteconnector connector = new SQLiteconnector("jdbc:sqlite:data/inventory.db");
         Connection connection = connector.getConnection();
         SQLiteinit init = new SQLiteinit(connection);
         init.initialize();
