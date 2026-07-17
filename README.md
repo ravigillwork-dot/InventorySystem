@@ -5,6 +5,22 @@ This project includes thorough JUnit testing with 57 tests in total that run aut
 A Multi-stage Docker build which can be run on any device without worrying about dependencies. 
 
 ![Screenshot 2026-07-17 121245.png](images/Screenshot%202026-07-17%20121245.png)
+
+## Highlights
+
+
+#### 3 storage backends, 1 interface
+in-memory, JSON file, and SQLite are fully swappable with zero changes to calling code
+
+#### Hand-rolled REST API
+Routing, query parsing, and JSON wiring built directly on com.sun.net.httpserver, no framework hiding the mechanics
+
+#### 57 tests
+1:1 test-to-code ratio — enforced by CI on every push and pull request
+
+#### Multi-stage Docker build
+Compiles in one stage, ships a small self-contained image in the next
+Java 26, using instance main() entry points (JEP 512) instead of the traditional boilerplate.
 ## Getting Started
 
 **Prerequisites:** JDK 26, Maven 3.9+ (Docker optional). JDK 26 is required specifically because the entry points use instance `main()` methods (JEP 512), a language feature not available on older JDKs.
@@ -41,24 +57,6 @@ This will create a folder named dataInventory in the directory with a SQLite dat
 docker run -it -p 8080:8080 -v ${PWD}\dataInventory:/app/data inventory
 ```
 Java 26 · Maven · REST API · JDBC · Repository Pattern · Dependency Injection · 57 Tests · Docker · GitHub Actions CI
-
-
-## Highlights
-
-
-#### 3 storage backends, 1 interface
-in-memory, JSON file, and SQLite are fully swappable with zero changes to calling code
-
-#### Hand-rolled REST API
-Routing, query parsing, and JSON wiring built directly on com.sun.net.httpserver, no framework hiding the mechanics
-
-#### 57 tests
-1:1 test-to-code ratio — enforced by CI on every push and pull request
-
-#### Multi-stage Docker build
-Compiles in one stage, ships a small self-contained image in the next
-Java 26, using instance main() entry points (JEP 512) instead of the traditional boilerplate.
-
 
 
 ## Features
